@@ -105,3 +105,6 @@ venv.bak/
 
 # Mac stuff
 .DS_store
+
+# Twitter access tokens
+TWITTER_KEYS
