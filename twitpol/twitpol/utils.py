@@ -3,7 +3,7 @@ utils.py
 
 General-purpose utility functions.
 """
-import config
+from twitpol import config
 
 
 def get_api_keys():
