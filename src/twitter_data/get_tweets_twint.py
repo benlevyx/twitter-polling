@@ -3,7 +3,7 @@ import twint
 from twitpol import config, utils, db
 
 
-def make_config(hide_output=True, get_location=True):
+def make_config(hide_output=True, get_location=False):
     c = twint.Config()
     c.Pandas = True
     c.Location = get_location

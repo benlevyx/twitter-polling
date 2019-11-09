@@ -26,5 +26,5 @@ DB_SETTINGS = dict(
 )
 
 # Settings for crawl of twitter
-start_date = '2019-01-01'
-end_date = '2019-11-09'
+start_date = '2019-03-01'  # March 1st
+end_date = '2019-11-09'    # November 9th (day this was written)
