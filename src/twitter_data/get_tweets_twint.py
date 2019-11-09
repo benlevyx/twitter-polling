@@ -44,11 +44,11 @@ def main():
             df_tweets = run_search(c)
             df_tweets['name'] = name
 
-
             write_df_to_db(df_tweets, engine)
 
             n_tweets = len(df_tweets)
             print(f'{name} - {d1} - Downloaded {n_tweets} tweets.')
+
 
 if __name__ == '__main__':
     main()
