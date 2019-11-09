@@ -1,0 +1,13 @@
+BIDEN: Joe Biden OR "Joseph Biden" OR "Biden" OR "Diamond Joe" OR "JoeBiden"
+
+WARREN: Elizabeth Warren OR "Warren" OR "SenWarren" OR "Senator Warren" OR "ElizabethWarren"
+
+SANDERS: Bernie Sanders OR "Bernie" OR "Sanders" OR "#FeelTheBern" OR "Senator Sanders" OR "BernieSanders"
+
+HARRIS: Kamala Harris OR "Kamala" OR "Senator Harris" OR "Sen Harris" OR "KamalaHarris"
+
+BUTTIGIEG: Pete Buttigieg OR "Buttigieg" OR "Mayor Pete" OR "MayorPete" OR "PeteButtigieg"
+
+BOOKER: Cory Booker OR "Cory 2020" OR "Cory2020" OR "Senator Booker" OR "Sen Booker" OR "CoryBooker"
+
+OROURKE: "Beto O’Rourke" OR "Beto" OR  OR "O’Rourke" OR "Beto2020" OR "BetoORourke" OR "ORourke"
