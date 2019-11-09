@@ -17,17 +17,12 @@ def get_queries():
         queries = []
         for line in f:
             queries.append(line.split(': '))
+    return queries
 
 
 def run_search(c):
     twint.run.Search(c)
     return twint.storage.panda.Tweets_df
-
-
-def write_df_to_db(df, engine=None):
-    if engine is None:
-        engine = db.get_db_engine()
-    df.to_sql(config.DB_SETTINGS.database, con=engine, if_exists='append')
 
 
 def main():
@@ -37,14 +32,14 @@ def main():
     for query in queries:
         name, q = query
         c.Search = q
-        for d1, d2 in utils.date_range(config.start_date, config.end_date, day_step=1):
+        for d1, d2 in utils.date_range(config.start_date, config.end_date, step=1):
             c.Since = d1
             c.Until = d2
 
             df_tweets = run_search(c)
             df_tweets['name'] = name
 
-            write_df_to_db(df_tweets, engine)
+            db.write_df_to_db(df_tweets, engine)
 
             n_tweets = len(df_tweets)
             print(f'{name} - {d1} - Downloaded {n_tweets} tweets.')

@@ -29,7 +29,10 @@ def date_range(d1, d2=datetime.today(), step=1, fmt="%Y-%m-%d"):
     :yields: tuple of (int, int) denoting start and end date of each interval
     """
     date1 = datetime.strptime(d1, fmt)
-    date2 = datetime.strptime(d2, fmt)
+    if isinstance(d2, str):
+        date2 = datetime.strptime(d2, fmt)
+    else:
+        date2 = d2.date()
     day_step = timedelta(days=step)
 
     curr_date1 = date1
