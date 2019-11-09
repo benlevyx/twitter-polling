@@ -22,3 +22,7 @@ DB_SETTINGS = dict(
     charset='utf8',
     database='tweets_db'
 )
+
+# Settings for crawl of twitter
+start_date = '2019-01-01'
+end_date = '2019-11-09'

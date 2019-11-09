@@ -1,0 +1,7 @@
+BIDEN: Joe Biden OR Biden OR Joseph Biden OR 
+WARREN: Elizabeth Warren
+SANDERS: Bernie Sanders
+HARRIS: Kamala Harris
+BUTTIGIEG: Pete Buttigieg
+BOOKER: Cory Booker
+OROURKE: Beto O'Rourke
