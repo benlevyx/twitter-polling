@@ -4,6 +4,8 @@ utils.py
 General-purpose utility functions.
 """
 from datetime import datetime, timedelta
+import logging
+import sys
 
 from twitpol import config
 
@@ -40,7 +42,31 @@ def date_range(d1, d2=datetime.today(), step=1, fmt="%Y-%m-%d"):
         curr_date2 = curr_date1 + day_step
         curr_date_str1 = curr_date1.strftime(fmt)
         curr_date_str2 = curr_date2.strftime(fmt)
+        curr_date1 = curr_date2
 
         yield curr_date_str1, curr_date_str2
 
-        curr_date1 = curr_date2
+
+def format_handler(handler):
+    formatter = logging.Formatter(fmt=config.LOG_FORMAT_STR)
+    handler.setFormatter(formatter)
+    return handler
+
+
+def get_console_handler():
+    console_handler = logging.StreamHandler(sys.stdout)
+    return format_handler(console_handler)
+
+
+def get_file_handler():
+    file_handler = logging.FileHandler(config.LOG_FILE)
+    return format_handler(file_handler)
+
+
+def get_logger(logger_name):
+    logger = logging.getLogger(logger_name)
+    logger.setLevel(logging.INFO)
+    logger.addHandler(get_console_handler())
+    logger.addHandler(get_file_handler())
+    logger.propagate = False
+    return logger
