@@ -1,13 +1,18 @@
+import traceback
+
 import twint
+from aiohttp.client_exceptions import ClientPayloadError, ClientConnectorError
 
 from twitpol import config, utils, db
+
+
+twint_logger = utils.get_logger('twint_logger')
 
 
 def make_config(hide_output=True, get_location=False):
     c = twint.Config()
     c.Pandas = True
     c.Location = get_location
-    c.Pandas_clean = True
     c.Hide_output = hide_output
     return c
 
@@ -20,11 +25,6 @@ def get_queries():
     return queries
 
 
-def run_search(c):
-    twint.run.Search(c)
-    return twint.storage.panda.Tweets_df
-
-
 def main():
     c = make_config()
     queries = get_queries()
@@ -32,17 +32,29 @@ def main():
     for query in queries:
         name, q = query
         c.Search = q
-        for d1, d2 in utils.date_range(config.start_date, config.end_date, step=1):
+
+        for d1, d2 in utils.date_range(config.start_date, config.end_date, step=5):
             c.Since = d1
             c.Until = d2
 
-            df_tweets = run_search(c)
-            df_tweets['name'] = name
+            # Running the search
+            try:
+                twint.run.Search(c)
+                df_tweets = twint.storage.panda.Tweets_df
+                df_tweets['name'] = name
+                n_tweets = len(df_tweets)
+                db.write_df_to_db(df_tweets, engine)
+                # Logging the results
+                msg = f'{name}:{d1}:Downloaded {n_tweets} tweets'
+                if n_tweets == 0:
+                    twint_logger.warning(msg)
+                else:
+                    twint_logger.info(msg)
+            except (ClientPayloadError, ClientConnectorError):
+                twint_logger.error(traceback.format_exc())
 
-            db.write_df_to_db(df_tweets, engine)
-
-            n_tweets = len(df_tweets)
-            print(f'{name} - {d1} - Downloaded {n_tweets} tweets.')
+        n_tweets_total = db.count_tweets(where=f"name = '{name}'")
+        twint_logger.info(f'TOTAL OF {n_tweets_total} TWEETS DOWNLOADED FOR {name}')
 
 
 if __name__ == '__main__':
