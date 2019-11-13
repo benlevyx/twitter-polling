@@ -35,8 +35,34 @@ def count_tweets(where=None, engine=None):
 
 
 def clear_db_table(tbl=None, engine=None):
+    tbl, engine = _check_tbl_engine(tbl, engine)
+    engine.execute(f'DELETE FROM {tbl};')
+
+
+def drop_duplicate_rows(tbl=None, engine=None):
+    tbl, engine = _check_tbl_engine(tbl, engine)
+    sql_query = f'''
+    DELETE t1 FROM {tbl} t1
+    INNER JOIN {tbl} t2
+    WHERE
+        t1.index < t2.index AND
+        t1.id = t2.id;
+    '''
+    engine.execute(sql_query)
+
+
+def add_unique_constraint(col, tbl=None, engine=None):
+    tbl, engine = _check_tbl_engine(tbl, engine)
+    sql_str = f'''
+    ALTER TABLE {tbl}
+    ADD UNIQUE ({col});
+    '''
+    engine.execute(sql_str)
+
+
+def _check_tbl_engine(tbl, engine):
     if tbl is None:
         tbl = config.DB_SETTINGS['tweets_table']
     if engine is None:
         engine = get_db_engine()
-    engine.execute(f'DELETE FROM {tbl};')
+    return tbl, engine
