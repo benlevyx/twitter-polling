@@ -1,4 +1,5 @@
 from sqlalchemy import create_engine
+from sqlalchemy.types import VARCHAR
 import pandas as pd
 
 from twitpol import config, utils
@@ -19,9 +20,23 @@ def write_df_to_db(df, engine=None):
     if engine is None:
         engine = get_db_engine()
     try:
-        df.to_sql(config.DB_SETTINGS["tweets_table"], con=engine, if_exists='append')
+        df['id'] = df['id'].astype(int)
+        _write_df_to_db(df, engine)
     except TypeError:
-        df.applymap(str).to_sql(config.DB_SETTINGS["tweets_table"], con=engine, if_exists='append')
+        try:
+            df['id'] = df['id'].astype(int)
+            cols_to_str = ['tweet', 'hashtags', 'cashtags', 'user_id_str',
+                           'username', 'name', 'link', 'quote_url', 'search',
+                           'near', 'geo', 'source', 'user_rt', 'reply_to']
+            df[cols_to_str] = df[cols_to_str].astype(str)
+            _write_df_to_db(df, engine, dtype={'None': VARCHAR(5)})
+        except TypeError:
+            df = df.applymap(str)
+            _write_df_to_db(df, engine)
+
+
+def _write_df_to_db(df, engine, **kwargs):
+    df.to_sql(config.DB_SETTINGS["tweets_table"], con=engine, if_exists='append', **kwargs)
 
 
 def count_tweets(where=None, engine=None):
