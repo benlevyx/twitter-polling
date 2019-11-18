@@ -60,7 +60,7 @@ def predict_sentiment(tweets):
 
     #compile the keras model
     embedding_dim = 100
-    max_words = 300000
+    max_words = 200000
     max_length = 50
     lstm_model4 = Sequential()
     lstm_model4.add(Embedding(max_words, embedding_dim, input_length=max_length))
