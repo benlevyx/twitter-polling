@@ -1,4 +1,3 @@
-import traceback
 import time
 import random
 from asyncio import TimeoutError as async_TimeoutError
@@ -55,13 +54,15 @@ def main():
     engine = db.get_db_engine()
     for query in queries:
         name, q = query
-        if name == 'HARRIS' or name == 'BIDEN':
-            continue
-        c.Search = q
 
+        # Picking up where the last searches left off
+        if name not in ['BUTTIGIEG', 'BOOKER']:
+            continue
         start_date = config.start_date
-        if name == 'SANDERS':
-            start_date = '2019-11-15'
+        if name == 'BUTTIGIEG':
+            start_date = '2019-08-17'
+
+        c.Search = q
         for d1, d2 in utils.date_range(start_date, config.end_date, step=1):
             c.Since = d1
             c.Until = d2
