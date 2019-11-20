@@ -109,3 +109,5 @@ venv.bak/
 # Twitter access tokens
 TWITTER_KEYS
 
+# Don't commit huge files
+big_data/

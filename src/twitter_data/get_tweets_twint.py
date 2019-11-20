@@ -56,7 +56,7 @@ def main():
         name, q = query
 
         # Picking up where the last searches left off
-        if name not in ['BUTTIGIEG', 'BOOKER']:
+        if name != 'BUTTIGIEG':
             continue
         start_date = config.start_date
         if name == 'BUTTIGIEG':
