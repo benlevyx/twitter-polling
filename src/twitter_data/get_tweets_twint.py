@@ -4,6 +4,7 @@ from asyncio import TimeoutError as async_TimeoutError
 
 import twint
 from aiohttp.client_exceptions import ClientError
+import pandas as pd
 
 from twitpol import config, utils, db, timeout
 from twitpol.exceptions import TweetError, InsufficientTweetsError
@@ -31,6 +32,11 @@ def get_queries():
     return queries
 
 
+def get_date_gaps():
+    df_gaps = pd.read_csv(config.DATA / 'queries' / 'date_gaps' / 'date_gaps_biden_warren_sanders.csv')
+    return df_gaps
+
+
 def run_search(c, name, engine, d1):
     with timeout.timeout(seconds=300):
         twint.run.Search(c)
@@ -51,24 +57,20 @@ def run_search(c, name, engine, d1):
 def main():
     c = make_config()
     queries = get_queries()
+    gaps = get_date_gaps()
     engine = db.get_db_engine()
     for query in queries:
         name, q = query
-
-        # Picking up where the last searches left off
-        if name != 'BUTTIGIEG':
-            continue
-        start_date = config.start_date
-        if name == 'BUTTIGIEG':
-            start_date = '2019-08-17'
+        dates = gaps[gaps['name'] == name]
 
         c.Search = q
-        for d1, d2 in utils.date_range(start_date, config.end_date, step=1):
+        # for d1, d2 in utils.date_range(config.start_date, config.end_date, step=1):
+        for d1, d2 in zip(dates['start_date'], dates['end_date']):
             c.Since = d1
             c.Until = d2
 
             # Running the search
-            for i in range(10):
+            for i in range(15):
                 try:
                     my_logger.info(f'{name}:{d1}:Attempt {i + 1}')
                     run_search(c, name, engine, d1)
