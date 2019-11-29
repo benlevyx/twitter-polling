@@ -20,18 +20,25 @@ def get_users_chunk(i, chunk_size, engine):
     return ids
 
 
+def _possibly_empty(df):
+    if len(df) == 0:
+        return []
+    else:
+        return df.iloc[0, 0]
+
+
 def find_followers(c):
     with timeout.timeout(seconds=500):
         twint.run.Followers(c)
-        followers = twint.storage.panda.Follow_df.iloc[0, 0]
-        return followers
+        followers = twint.storage.panda.Follow_df
+        return _possibly_empty(followers)
 
 
 def find_following(c):
     with timeout.timeout(seconds=500):
         twint.run.Following(c)
-        following = twint.storage.panda.Follow_df.iloc[0, 0]
-        return following
+        following = twint.storage.panda.Follow_df
+        return _possibly_empty(following)
 
 
 @backoff.on_exception(backoff.expo,
