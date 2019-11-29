@@ -25,7 +25,8 @@ DB_SETTINGS = dict(
     password='dbpass111',
     charset='utf8',
     database='tweets_db',
-    tweets_table='tweets'
+    tweets_table='tweets',
+    users_table='users'
 )
 
 # Settings for crawl of twitter

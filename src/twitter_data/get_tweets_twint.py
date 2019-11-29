@@ -6,21 +6,11 @@ import twint
 from aiohttp.client_exceptions import ClientError
 import pandas as pd
 
-from twitpol import config, utils, db, timeout
+from twitpol import config, utils, db, timeout, twitter
 from twitpol.exceptions import TweetError, InsufficientTweetsError
 
 
 my_logger = utils.get_logger('my_logger')
-# logging.basicConfig(level=logging.DEBUG, filename=config.LOG_FILE)
-
-
-def make_config(hide_output=False, get_location=False):
-    c = twint.Config()
-    c.Pandas = True
-    c.Location = get_location
-    c.Hide_output = hide_output
-
-    return c
 
 
 def get_queries():
@@ -55,7 +45,7 @@ def run_search(c, name, engine, d1):
 
 
 def main():
-    c = make_config()
+    c = twitter.make_config()
     queries = get_queries()
     gaps = get_date_gaps()
     engine = db.get_db_engine()
@@ -64,21 +54,21 @@ def main():
         dates = gaps[gaps['name'] == name]
 
         c.Search = q
-        # for d1, d2 in utils.date_range(config.start_date, config.end_date, step=1):
-        for d1, d2 in zip(dates['start_date'], dates['end_date']):
-            c.Since = d1
-            c.Until = d2
+        for start_date, end_date in zip(dates['start_date'], dates['end_date']):
+            for d1, d2 in utils.date_range(start_date, end_date, step=1):
+                c.Since = d1
+                c.Until = d2
 
-            # Running the search
-            for i in range(15):
-                try:
-                    my_logger.info(f'{name}:{d1}:Attempt {i + 1}')
-                    run_search(c, name, engine, d1)
-                    break
-                except (TimeoutError, ClientError, TweetError, async_TimeoutError) as e:
-                    msg = f'{name}:{d1}:{e}'
-                    my_logger.error(msg)
-            time.sleep(2)
+                # Running the search
+                for i in range(15):
+                    try:
+                        my_logger.info(f'{name}:{d1}:Attempt {i + 1}')
+                        run_search(c, name, engine, d1)
+                        break
+                    except (TimeoutError, ClientError, TweetError, async_TimeoutError) as e:
+                        msg = f'{name}:{d1}:{e}'
+                        my_logger.error(msg)
+                time.sleep(2)
 
         n_tweets_total = db.count_tweets(where=f"name = '{name}'")
         my_logger.info(f'TOTAL OF {n_tweets_total} TWEETS DOWNLOADED FOR {name}')

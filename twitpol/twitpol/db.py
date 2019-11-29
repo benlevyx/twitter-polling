@@ -81,3 +81,8 @@ def _check_tbl_engine(tbl, engine):
     if engine is None:
         engine = get_db_engine()
     return tbl, engine
+
+
+def write_dict_to_db(dct, tbl, engine):
+    df = pd.DataFrame(dct)
+    df.to_sql(tbl, con=engine)
