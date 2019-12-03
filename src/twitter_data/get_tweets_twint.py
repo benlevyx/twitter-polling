@@ -1,6 +1,7 @@
 import time
 import random
 from asyncio import TimeoutError as async_TimeoutError
+import logging
 
 import twint
 from aiohttp.client_exceptions import ClientError
@@ -11,6 +12,7 @@ from twitpol.exceptions import TweetError, InsufficientTweetsError
 
 
 my_logger = utils.get_logger('my_logger')
+logging.getLogger('backoff').addHandler(utils.get_file_handler())
 
 
 def get_queries():
