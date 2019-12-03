@@ -23,7 +23,7 @@ def get_queries():
 
 
 def get_date_gaps():
-    df_gaps = pd.read_csv(config.DATA / 'queries' / 'date_gaps' / 'date_gaps_biden_warren_sanders.csv')
+    df_gaps = pd.read_csv(config.DATA / 'queries' / 'date_gaps' / 'harris_buttigieg_date_gaps.csv')
     return df_gaps
 
 
@@ -52,9 +52,10 @@ def main():
     for query in queries:
         name, q = query
         dates = gaps[gaps['name'] == name]
-
+        if len(dates) == 0:
+            continue
         c.Search = q
-        for start_date, end_date in zip(dates['start_date'], dates['end_date']):
+        for start_date, end_date in zip(dates['start'], dates['end']):
             for d1, d2 in utils.date_range(start_date, end_date, step=1):
                 c.Since = d1
                 c.Until = d2
