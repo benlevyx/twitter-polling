@@ -10,6 +10,7 @@ from datetime import datetime
 # Various folders
 ROOT = Path(__file__).parent.parent.parent
 DATA = ROOT / 'data'
+PROCESSED = DATA / 'processed'
 MODELS = ROOT / 'models'
 SRC = ROOT / 'src'
 LOGS = ROOT / 'logs'
