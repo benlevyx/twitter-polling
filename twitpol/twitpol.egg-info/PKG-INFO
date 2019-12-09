@@ -1,0 +1,14 @@
+Metadata-Version: 1.2
+Name: twitpol
+Version: 0.0.1
+Summary: Functions and variables for predicting political opinion polls from Twitter data
+Home-page: https://github.com/benlevyx/twitter-polling
+Author: Benjamin Levy, Dimitris Vamvourellis, Matthieu Meeus, Will Fried
+Author-email: benjaminlevy@g.harvard.edu
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.5
