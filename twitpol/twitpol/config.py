@@ -18,6 +18,12 @@ LOGS = ROOT / 'logs'
 API_KEY_FILE = Path('TWITTER_KEYS')
 TWITTER_CREDENTIALS_FILE = Path('twitter_credentials.yaml')
 
+CANDIDATES = ['BIDEN',
+              'BUTTIGIEG',
+              'HARRIS',
+              'SANDERS',
+              'WARREN']
+
 # Settings for AWS RDS
 DB_SETTINGS = dict(
     host='database-2.czpegg91dqsv.us-east-2.rds.amazonaws.com',

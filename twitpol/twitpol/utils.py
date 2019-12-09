@@ -70,3 +70,11 @@ def get_logger(logger_name):
     logger.addHandler(get_file_handler())
     logger.propagate = False
     return logger
+
+
+def get_queries():
+    with (config.DATA / 'queries' / 'twitter_search_queries.txt').open() as f:
+        queries = []
+        for line in f:
+            queries.append(line.split(': '))
+    return queries
