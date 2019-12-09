@@ -1,10 +1,4 @@
-
----
-title: Final Writeup
-subtitle: AC209a Final Project Group 53
----
-
-# Final Writeup
+# Can we predict public opinion of politicians using Twitter?
 
 ## Introduction and motivation 
 With the Democratic primary elections coming up in 2020, polls that describe and predict the popularity of each candidate get increasing attention. However, since the presidential elections of 2016, the accuracy of these polls has been fundamentally critized. It turns out that generalizing limited, often biased voting samples to an entire nation is a very hard thing to do. Additionally, polls are only able to capture trends in popularity with a certain delay. If candidate X has performed great in a certain debate or a recent scandal about candidate Y was brought to light, the impact on the polls is only seen after at least a couple of days. 
@@ -200,7 +194,15 @@ Next, we can explore the distribution of the sentiment in all tweets for specifi
 
 ![](https://i.imgur.com/s7eo0l7.png)
 
-TEXT TO BE ADDED
+Consequently, the sentiment on Twitter can be plotted over time. As the end goal of this project is to eveluate the correlation between twitter data and popularity of a specific presidential candidate, we came up with two specific variables to consider over time: number of tweets and aggregated sentiment weighted by likes. 
+
+The first variable allows us to explore how the amount of tweets mentioning a particular candidate relates to his/her popularity. For different sentiment cut-offs, the number of tweets for each candiddate is plotted over time on the figures below (left). The absolute ground truth over time from the polling data is plotted as well. Note that the number of tweets per day is divided by the max number of tweets that has happened during the entire timeframe considered. This has been done for visualization purposes only.
+
+Secondly, the aggregated sentiment for every day has to be determined. Intuitively, it makes sense to weight a particular sentiment to its popularity, or number of likes. A representative sentiment for each day is thus computed as:
+
+$$ sentiment_{d} = \frac{\sum_{i = 0}^N likes_i *sentiment_i}{\sum_{i = 0}^N likes_i}$$
+
+Here, d stands for a particular day and N corresponds to the total number of tweets mentioning a particular candidate posted that day. On the right figures below, this aggregated, weighted sentiment is plotted over time, again with the absolute ground truth overlaid.
 
 ![](https://i.imgur.com/CtYwNfP.png =340x250)
 ![](https://i.imgur.com/SdmEMdi.png =340x250)
@@ -217,7 +219,7 @@ TEXT TO BE ADDED
 ![](https://i.imgur.com/nn8gLgS.png =340x250)
 ![](https://i.imgur.com/FksNjQc.png =340x250)
 
-TEXT TO BE ADDEDD
+Both the number of tweets over time and the weighted aggregated sentiment show significant ups and downs. From the graphs alone, it is unsure whether these variables can relate to the ground truth. Some parts of the graphs might seem promising. For instance, the number of tweets for Biden appear to decrease when his popularity goes down. Similarly, the weighted aggregated sentiment for Harris seems to rise and fall around the same time as Harris' ground truth. Whether these potential trends are due to noise and coincidence or the twitter data is truly significant in elections polls, is to be determined in the modeling part below.
 
 
 ## Modeling
@@ -273,7 +275,23 @@ The grid search described above revealed that the optimal values of $\beta_{\alp
 
 The notebook that performs this grid search can be found [here](https://github.com/benlevyx/twitter-polling/blob/master/notebooks/dirichlet%20model/dirichlet_model_grid_search.ipynb).
 
-All the analysis performed thus far provided conclusive evidence that tweets cannot be used to gain insight into candidates' popularity. As such, there was no need to develop any other models, as we were confident that even the most sophisticated model wouldn't be able to extract any useful signal from the tweets. 
+All the analysis performed thus far provided conclusive evidence that tweets cannot be used to gain insight into candidates' popularity. As such, there was no need to develop any other models, as we were confident that even the most sophisticated model wouldn't be able to extract any useful signal from the tweets. That being said, there were still several flaws with this Bayesian model that ideally would have been addressed. 
+
+In this model, our formulation of the data-generating process in which supporters of a given candidate independently decide whether to post a tweet in favor that candidate was overly simplistic. Part of the allure of this view of the data-generating process was that it made it natural to model the data using a multinomial distribution and thus allowed us to take advantage of the computational simplicity and model interpretability associated with Dirichlet-multinomial conjugacy. 
+
+However, just because this model was convenient to use doesn't mean it was the most appropriate choice. Not only did it disregard all negative tweets, which make up half of all tweets, but it also made the unrealistic assumption that each positive tweet can be interpreted as a vote for the candidate, when in reality, the tweets at best offer a rough sense of how the candidates and their policies are perceived by the public. 
+
+Additionally, this model failed to account for the fact that the popularity of certain candidates are tightly related. For example, Elizabeth Warren and Bernie Sanders are the two most progressive candidates in the field, which means that are both trying to win over the most progressive wing of the Democratic party. This means that increasing support for Warren should theoretically come at the expense of Bernie Sanders’s support and vice versa. Meanwhile, Joe Biden is generally seen as a safe, moderate, well-known candidate, which means that he tends to be the default choice for voters who aren’t particularly passionate about any of the other candidates. This means that lack of positive sentiment about other candidates theoretically bodes well for Biden.
+
+Listed below are some of the features of a more advanced Bayesian model that addresses these deficiencies of our model (this model would still use the same Dirichlet prior distribution on the polling numbers):
+
+* A correlation matrix ($\mathbf{\Sigma}$) that measures the strength and direction of the correlation of the popularity of the various candidates. This correlation matrix would be specified by a combination of the empirical correlation matrix formed by the ground truth polling data and domain knowledge about how the ideologies and personalities of the candidates relate to each other. 
+
+* An overall sentiment score for each candidate $\mathbf{S} = [S_1, ..., S_5]$ that is formed by weighing each tweet (both positive and negative) by the distance of the sentiment score from a neutral score of 0.5. (One way to mitigate the risk of falsely interpreting negative tweets from Republicans as negative sentiment among Democrats would be to look up the Twitter handles associated with common conservative news outlet and ignore tweets from users who follow these particuar accounts.)
+
+* A generative model that explains how the observed sentiment scores are generated from the true popularity of each candidate and the interdependencies between the candidates' popularity (i.e. $p(\mathbf{S}|\mathbf{\theta}, \mathbf{\Sigma})$). One option would be to use a multivariate normal distribution, $\mathbf{S} \sim MVN(f(\mathbf{\theta}), \frac{\mathbf{\Sigma}}{\kappa})$ where $f$ represents an affine transformation, and $\kappa$ represents a scaling factor. These operations would likely be needed to account for the fact that $\mathbf{S}$ and $\mathbf{\theta}$ are on different scales (e.g. an increase in sentiment score of 0.01 doesn't correspond to an increase in popularity of 0.01). 
+
+At this point, the posterior distribution of $\mathbf{\theta}$ can be specified: $p(\mathbf{\theta}|\mathbf{S},\mathbf{\Sigma}) \propto p(\mathbf{S}|\mathbf{\theta}, \mathbf{\Sigma}) \ p(\mathbf{\theta})$, where $\mathbf{\theta} \sim Dir(\mathbf{\alpha})$. This posterior distribution can be approximated by numerical methods such as Markov chain Monte Carlo.
 
 ## Conclusion and possible improvements 
 
@@ -317,25 +335,6 @@ A strong assumption of the Bayesian model is that each positive-sentiment tweet 
 - debias for bots/republican 
 - take into account the negative tweets
 
-Although they in all likelihood had no impact on the conclusions of this project, there were several flaws with the models that were developed to assess the relationship between tweets and candidates' popularity. In particular, there were several improvements that could have been made to the Bayesian model.
-
-In this model, our formulation of the data-generating process in which supporters of a given candidate independently decide whether to post a tweet in favor that candidate was overly simplistic. Part of the allure of this view of the data-generating process was that it made it natural to model the data using a multinomial distribution and thus allowed us to take advantage of the computational simplicity and model interpretability associated with Dirichlet-multinomial conjugacy. 
-
-However, just because this model was convenient to use doesn't mean it was the most appropriate choice. Not only did it disregard all negative tweets, which make up half of all tweets, but it also made the unrealistic assumption that each positive tweet can be interpreted as a vote for the candidate, when in reality, the tweets at best offer a rough sense of how the candidates and their policies are perceived by the public. 
-
-Additionally, this model failed to account for the fact that the popularity of certain candidates are tightly related. For example, Elizabeth Warren and Bernie Sanders are the two most progressive candidates in the field, which means that are both trying to win over the most progressive wing of the Democratic party. This means that increasing support for Warren should theoretically come at the expense of Bernie Sanders’s support and vice versa. Meanwhile, Joe Biden is generally seen as a safe, moderate, well-known candidate, which means that he tends to be the default choice for voters who aren’t particularly passionate about any of the other candidates. This means that lack of positive sentiment about other candidates theoretically bodes well for Biden.
-
-Listed below are some of the features of a more advanced Bayesian model that addresses these deficiencies of our model:
-
-* The same Dirichlet prior distribution that was used in our model.
-
-* A correlation matrix ($\mathbf{\Sigma}$) that measures the strength and direction of the correlation of the popularity of the various candidates. This correlation matrix would be specified by a combination of the empirical correlation matrix formed by the ground truth polling data and domain knowledge about how the ideologies and personalities of the candidates relate to each other. 
-
-* An overall sentiment score for each candidate $\mathbf{S} = [S_1, ..., S_5]$ that is formed by weighing each tweet (both positive and negative) by the distance of the sentiment score from a neutral score of 0.5. (One way to mitigate the risk of falsely interpreting negative tweets from Republicans as negative sentiment among Democrats would be to look up the Twitter handles associated with common conservative news outlet and ignore tweets from users who follow these particuar accounts.)
-
-* A generative model that explains how the observed sentiment scores are generated from the true popularity of each candidate and the interdependencies between the candidates' popularity (i.e. $p(\mathbf{S}|\mathbf{\theta}, \mathbf{\Sigma})$). One option would be to use a multivariate normal distribution, $\mathbf{S} \sim MVN(f(\mathbf{\theta}), \frac{\mathbf{\Sigma}}{\kappa})$ where $f$ represents an affine transformation, and $\kappa$ represents a scaling factor. These operations would likely be needed to account for the fact that $\mathbf{S}$ and $\mathbf{\theta}$ are on different scales (e.g. an increase in sentiment score of 0.01 doesn't correspond to an increase in popularity of 0.01). 
-
-At this point, the posterior distribution of $\mathbf{\theta}$ can be specified: $p(\mathbf{\theta}|\mathbf{S},\mathbf{\Sigma}) \propto p(\mathbf{S}|\mathbf{\theta}, \mathbf{\Sigma}) \ p(\mathbf{\theta})$, where $\mathbf{\theta} \sim Dir(\mathbf{\alpha})$. This posterior distribution can be approximated by numerical methods such as Markov chain Monte Carlo.
 
 
 
