@@ -22,7 +22,7 @@ The sizes of corpora varied from hundreds of thousands (Tumasjan et al, 2010; Ch
 
 ### Sentiment analysis and feature extraction
 
-As noted by Gayo-Avello (2012), the apparent norm among studies of political sentiment on Twitter is to apply overly simplistic sentiment models with the hope that a large-enough corpus will compensate for the simplicity and lack of accuracy of the model. The following table summarizes some of the more common techniques:
+As noted by Gayo-Avello (2012), the apparent norm among studies of political sentiment on Twitter is to apply overly simplistic sentiment models with the hope that a large-enough corpus will compensate for the simplicity and lack of accuracy of the model. The following table summarizes some of the more common techniques for sentiment analysis on political tweets:
 
 **Table 1:** Comparison of sentiment models in surveyed studies.
 
@@ -36,7 +36,22 @@ As noted by Gayo-Avello (2012), the apparent norm among studies of political sen
 Bermingham & Smeaton (2011) | Manual annotation + supervised learning (AdaBoost) | 65.09% |
 Bollen et al. (2011) | Lexicon-based
 
+
 The most popular features used were either raw counts of tweets over the entire time period of interest for each candidate/party, or some sort of relative "sentiment score" based on the numbers of positive and negative tweets and their sentiment magnitudes.
+
+When it comes to general sentiment analysis on tweets of any theme, the most common techniques used in literature are Naive Bayes, support vector  mchines and logistic regression models while more complex approaches include convolutional and recurrent neural networks. The following table summarizes some of thet techniques which have been used in the past:
+
+**Table 2:** Comparison of sentiment analysis models on Twitter.
+
+| --------+---------+-------- |
+| Study | Type of sentiment model | Accuracy (if applicable) |
+| -------- | -------- | -------- |
+| Socher et al., (2013b) | Recurrent Neural Networks | 82.4% |
+| Socher et al., (2013b) | Naive Bayes | 81.8 |
+| Socher et al., (2013b) | SVM | 79.4 |
+| Sahni et al. (2009) |  Unigrams and Bigrams + Logistic Regression| 81.7
+| Sahni et al. (2009) | Unigrams + Naive Bayes | 79.2
+
 
 The simplistic approach to sentiment scoring seems to be one of the most significant limitations in the studies we have read. In general, sentiment analysis is a non-trivial task, and this is especially the case on Twitter, *particularly* in the realm of politics, where sarcasm, double entendre, ambiguous shorthands, and other linguistic oddities abound. Thus, building a strong sentiment classifier was one of the foci of our study.
 
