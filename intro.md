@@ -2,9 +2,9 @@
 layout: page
 title: Introduction and Motivation
 cover: true
-permalink: /twitter-polling/intro
+permalink: /intro/
 redirect_from:
-    /twitter-polling/
+    /
 ---
 
 With the Democratic primary elections coming up in 2020, polls that describe and predict the popularity of each candidate get increasing attention. However, since the presidential elections of 2016, the accuracy of these polls has been fundamentally critized. It turns out that generalizing limited, often biased voting samples to an entire nation is a very hard thing to do. Additionally, polls are only able to capture trends in popularity with a certain delay. If candidate X has performed great in a certain debate or a recent scandal about candidate Y was brought to light, the impact on the polls is only seen after at least a couple of days. 
