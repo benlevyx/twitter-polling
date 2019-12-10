@@ -29,4 +29,11 @@ Finally, we also experimented with using a pre-trained embedding layer instead o
 The model that we chose in the end is a recurrent neural network. Specifically, the first layer is an embedding layer which maps each word to a vector in a 100-dimensional space. The weights of this layer were not trained since we used a pre-trained Twitter GloVE word embedding fitted on 2 billion tweets (https://nlp.stanford.edu/projects/glove/). The embedding layer feeds to a sequence of two LSTM layers of 64 and 32 neurons respectively, which then feed to a densely connected hidden layer of 32 neurons which uses the ReLU activation function. Finally, there is an output layer of one neuron which uses the sigmoid activation function to constrain the score between 0 and 1.
 
 The code developed to fit the models can be found [here](https://github.com/benlevyx/twitter-polling/blob/master/notebooks/sentiment%20analysis/sentiment_analysis_exploration.ipynb).
+
+### Performance
+Unfortunately, it was not possible to test the performance of the model on a large number of tweets related to the Democratic primaries, since relevant labelled Twitter datasets are not publicly available.
+
+Instead, we held out 20% of the training dataset (more than 300000 tweets) to check how the model generalizes to unseen data. Similar to the training set, the test set consists of cases from both the Sentiment140 dataset and the GOP debate Twitter Sentiment dataset. Hence, the model was tested on a mix of political and non-political tweets.
 The train and test set accuracy analysis of the selected model is summarized [here](https://github.com/benlevyx/twitter-polling/blob/master/notebooks/sentiment%20analysis/sentiment_final_model.ipynb).
+
+
