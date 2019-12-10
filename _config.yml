@@ -34,6 +34,7 @@ remote_theme: hydecorp/hydejack
 # theme: jekyll-theme-hydejack
 plugins:
   - jekyll-feed
+  - jekyll-redirect-from
 
 # Setting the sidebar
 menu:
