@@ -42,7 +42,7 @@ plugins:
 # Setting the sidebar
 menu:
   - title: Introduction
-    url:   /intro/
+    url:   /
   - title: Literature Review
     url:   /litreview/
   - title: Data Collection
