@@ -42,6 +42,7 @@ The sizes of corpora varied from hundreds of thousands (Tumasjan et al, 2010; Ch
 As noted by Gayo-Avello (2012), the apparent norm among studies of political sentiment on Twitter is to apply overly simplistic sentiment models with the hope that a large-enough corpus will compensate for the simplicity and lack of accuracy of the model. The following table summarizes some of the more common techniques:
 
 **Table 1:** Comparison of sentiment models in surveyed studies.
+
 | Study | Type of sentiment model | Accuracy (if applicable) |
 | -------- | -------- | -------- |
 | Wang et al., (2012) | Manual annotation + supervised (Naive Bayes) | 59% |
@@ -69,6 +70,7 @@ Similar to the simplicity of the sentiment models, the models for predicting ele
 
 
 **Table 2:** Comparison of prediction models in surveyed studies.
+
 | Paper | Method | Accuracy measure (if applicable) |
 | -------- | -------- | -------- |
 | Tumasjan et al. (2010) | Non-parametric (share of traffic) | 1.65% mean absolute error |
