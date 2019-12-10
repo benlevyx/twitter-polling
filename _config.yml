@@ -31,7 +31,7 @@ github_username:  benlevyx
 # theme: minima
 remote_theme: hydecorp/hydejack
 # theme: reverie-theme
-theme: jekyll-theme-hydejack
+# theme: jekyll-theme-hydejack
 plugins:
   - jekyll-feed
 
