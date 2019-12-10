@@ -36,22 +36,24 @@ plugins:
   - jekyll-feed
   - jekyll-redirect-from
 
+whitelist: - jekyll-redirect-from
+
 # Setting the sidebar
 menu:
   - title: Introduction
-    url:   /intro/
+    url:   /intro
   - title: Literature Review
-    url:   /litreview/
+    url:   /litreview
   - title: Data Collection
-    url:   /data/
+    url:   /data
   - title: Sentiment Analysis
-    url:   /sentiment/
+    url:   /sentiment
   - title: EDA
-    url:   /eda/
+    url:   /eda
   - title: Modelling
-    url:   /modelling/
+    url:   /modelling
   - title: Conclusions
-    url:   /conclusion/
+    url:   /conclusion
 
 # Enabling math via KaTeX
 kramdown:
