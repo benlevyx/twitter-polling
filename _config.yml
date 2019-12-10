@@ -26,7 +26,7 @@ baseurl: "twitter-polling" # the subpath of your site, e.g. /blog
 url: "https://benlevyx.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: levyxx1
 github_username:  benlevyx
-permalink: /:basename/
+permalink: /:title/
 
 # Build settings
 # theme: minima
