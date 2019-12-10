@@ -38,19 +38,19 @@ plugins:
 # Setting the sidebar
 menu:
   - title: Introduction
-    url:   /intro/
+    url:   /twitter-polling/intro
   - title: Literature Review
-    url:   /litreview/
+    url:   /twitter-polling/litreview
   - title: Data Collection
-    url:   /data/
+    url:   /twitter-polling/data
   - title: Sentiment Analysis
-    url:   /sentiment/
+    url:   /twitter-polling/sentiment
   - title: EDA
-    url:   /eda/
+    url:   /twitter-polling/eda
   - title: Modelling
-    url:   /modelling/
+    url:   /twitter-polling/modelling
   - title: Conclusions
-    url:   /conclusion/
+    url:   /twitter-polling/conclusion
 
 # Enabling math via KaTeX
 kramdown:
