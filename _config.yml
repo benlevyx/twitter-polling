@@ -35,6 +35,30 @@ theme: jekyll-theme-hydejack
 plugins:
   - jekyll-feed
 
+# Setting the sidebar
+menu:
+  - title: Introduction
+    url:   /intro/
+  - title: Literature Review
+    url:   /litreview/
+  - title: Data Collection
+    url:   /data/
+  - title: Sentiment Analysis
+    url:   /sentiment/
+  - title: EDA
+    url:   /eda/
+  - title: Modelling
+    url:   /modelling/
+  - title: Conclusions
+    url:   /conclusion/
+
+# Enabling math via KaTeX
+kramdown:
+  math_engine:         mathjax # this is not a typo
+  math_engine_opts:
+    preview:           true
+    preview_as_code:   true
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
