@@ -26,6 +26,7 @@ baseurl: "twitter-polling" # the subpath of your site, e.g. /blog
 url: "https://benlevyx.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: levyxx1
 github_username:  benlevyx
+permalink: /:basename/
 
 # Build settings
 # theme: minima
@@ -41,19 +42,19 @@ plugins:
 # Setting the sidebar
 menu:
   - title: Introduction
-    url:   /intro
+    url:   /intro/
   - title: Literature Review
-    url:   /litreview
+    url:   /litreview/
   - title: Data Collection
-    url:   /data
+    url:   /data/
   - title: Sentiment Analysis
-    url:   /sentiment
+    url:   /sentiment/
   - title: EDA
-    url:   /eda
+    url:   /eda/
   - title: Modelling
-    url:   /modelling
+    url:   /modelling/
   - title: Conclusions
-    url:   /conclusion
+    url:   /conclusion/
 
 # Enabling math via KaTeX
 kramdown:
