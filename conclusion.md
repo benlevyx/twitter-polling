@@ -3,7 +3,7 @@ layout: page
 title: Discussion and Conclusions
 ---
 
-### Possible Issues with Twitter Data
+### Potential Issues with Twitter Data
 
 By looking at the plots of the ground-truth popularity of each candidate versus his/her implied popularity obtained based on the count of positive sentiment tweet counts as well as the prior polls, it is evident that the posterior support of each candidate is not correlated with the ground truth polls. This can be attributed to a range of factors:
 
