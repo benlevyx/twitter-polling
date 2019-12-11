@@ -10,11 +10,11 @@ We are a group of Master's students at the John A. Paulson School of Engineering
 ![Ben](/assets/img/ben.jpg)
 
 [Dimitris Vamvourellis](https://www.linkedin.com/in/dimitrios-vamvourellis/)
-![Dimitris](/assets/img/dimitris.jpg)
+![Dimitris](/assets/img/dimitris.jpeg)
 
 
-![Matthieu](/assets/img/matthieu.jpg)
-![Will](/assets/img/will.jpg)
+![Matthieu](/assets/img/matthieu.jpeg)
+![Will](/assets/img/will.jpeg)
 
 
 
