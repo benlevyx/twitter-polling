@@ -24,5 +24,4 @@ Lastly, the results from the analysis, appropriate conclusions and potential imp
 
 ![Text](/assets/img/tweet_word_cloud.jpg)
 
-![](https://i.imgur.com/xqvURt0.jpg)
-![](https://i.imgur.com/jJvjTAI.jpg)
+![](https://i.imgur.com/xqvURt0.jpg) ![](https://i.imgur.com/jJvjTAI.jpg)
