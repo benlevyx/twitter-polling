@@ -44,7 +44,15 @@ With the polling data at hand, the first step was to examine each poll and selec
 
 The weight associated with the sample size, $$n$$, of a given poll was defined to be $$\sqrt{n}$$. The statistic justification for this decision is that given a fraction, $$p$$, of voters that truly support a given candidate, the sampling distribution of a well-conducted poll is $$N(p, \frac{p(1-p)}{n})$$. Given that the standard deviation of the sampling distribution is inversely proportional to $$\sqrt{n}$$, the confidence of the given poll is also on the order of $$\sqrt{n}$$. 
 
-Meanwhile, the weight assigned to FiveThirtyEight’s pollster ratings was set to $$e^{-\lambda x}$$ where $$x$$ is a mapping from ratings to numbers such that A+, A and B respectively correspond to 0, 1 and 4, etc., and $$\lambda$$ is a hyperparameter to optimize. This exponentially decaying function guarantees that higher ratings are given a larger weight. Linearly combining these two credibility-related factors, the final weight assigned to a given poll was $$\alpha \sqrt{n} + (1 - \alpha) e^{-\lambda x}$$ where $$\lambda$$ and $$\alpha$$ are hypermeters to tune. 
+Meanwhile, the weight assigned to FiveThirtyEight’s pollster ratings was set to $$e^{-\lambda x}$$ where $$x$$ is a mapping from ratings to numbers such that A+, A and B respectively correspond to 0, 1 and 4, etc., and $$\lambda$$ is a hyperparameter to optimize. This exponentially decaying function guarantees that higher ratings are given a larger weight. Linearly combining these two credibility-related factors, the final weight assigned to a given poll was $$\alpha \sqrt{n} + (1 - \alpha) e^{-\lambda x}$$ where $$\lambda$$ and $$\alpha$$ are hyperparameters to tune. 
+
+The table below provides a summary of the variables defined above:
+| Variable | Definition | 
+| :-------------: |:-------------:| -----:|
+| $$n$$ | sample size of poll| 
+| $$x$$   | numeric representation of pollster ratings (higher ratings correspond to lower numbers)|
+|$$\alpha$$ | influence of sample size on weight of polls (ranges from 0 to 1)|
+|$$\lambda$$| conversion factor from pollster rating to weight of poll | 
 
 Before we could optimize the hyperparameters defined above, we first had to select a flexible model that could accurately fit the polling data for each of the five candidates under consideration and could handle different weights for each of the data points. The following nonparametric techniques were dismissed because they don’t support weighted observations: Gaussian process, LOESS, kNN and Nadaraya-Watson kernel regression, while the following nonparametric techniques were rejected because they resulted in extremely jagged curves: cubic spline, support vector regression and kernel ridge regression. Overall, the most suitable model among those considered was a random forest (which is equivalent to bagging in this case since there is only one predictor). 
 
