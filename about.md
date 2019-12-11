@@ -7,7 +7,10 @@ We are a group of Master's students at the John A. Paulson School of Engineering
 
 ### Group members
 
-<div>    
+<div class="im-container">    
     <img src="/twitter-polling/assets/img/ben.jpg" class="img-circle">
     Ben
+</div>
+<div>
+    <img src="/twitter-polling/assets/img/matthieu.jpg", class="img-circle">
 </div>
