@@ -74,7 +74,7 @@ The optimal values of $$\alpha$$ and $$\lambda$$ turned out to be 0.4 and 0.075,
 
 Finally, a 6-day running average was used to smooth out our best guess of the underlying ground truth.
 
-The resulting estimates are shown below for each candidate. In the plots, the transparency of each poll is set to the weight of each poll divided by the maximum weight of all the polls (therefore, the influence of each poll on the estimate is directly proportional to the darkness of the corresponding dot).
+The resulting estimates are shown below for each candidate. In the plots, the transparency of each poll is set to the weight of each poll divided by the maximum weight of all the polls (therefore, the influence of each poll on the estimate is directly proportional to the opacity of the corresponding dot).
 ![](https://i.imgur.com/pHVNjUr.png)
 ![](https://i.imgur.com/Fih3pKr.png)
 ![](https://i.imgur.com/chUSz9b.png)
