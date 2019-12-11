@@ -53,7 +53,7 @@ Listed below are features we could have added to our Bayesian model that could p
 
 * A generative model that explains how the observed sentiment scores are generated from the true popularity of each candidate and the interdependencies between the candidates' popularity (i.e. $$p(\mathbf{S} \mid \mathbf{\theta}, \mathbf{\Sigma})$$). One option would be to use a multivariate normal distribution, $$\mathbf{S} \sim N(f(\mathbf{\theta}), \frac{\mathbf{\Sigma}}{\kappa})$$ where $$f$$ represents an affine transformation, and $$\kappa$$ represents a scaling factor. These operations would likely be needed to account for the fact that $$\mathbf{S}$$ and $$\mathbf{\theta}$$ are on different scales (e.g. an increase in sentiment score of 0.01 doesn't correspond to an increase in popularity of 0.01). 
 
-At this point, the posterior distribution of $$\mathbf{\theta}$$ can be specified: $$p(\mathbf{\theta} \mid \mathbf{S},\mathbf{\Sigma}) \propto p(\mathbf{S} \mid \mathbf{\theta}, \mathbf{\Sigma}) \ p(\mathbf{\theta})$$, where $$\mathbf{\theta} \sim Dir(\mathbf{\alpha})$$. This posterior distribution can be approximated by numerical methods such as Markov chain Monte Carlo.
+At this point, the posterior distribution of $$\mathbf{\theta}$$ can be specified as follows: $$p(\mathbf{\theta} \mid \mathbf{S},\mathbf{\Sigma}) \propto p(\mathbf{S} \mid \mathbf{\theta}, \mathbf{\Sigma}) \ p(\mathbf{\theta})$$, where $$\mathbf{\theta} \sim Dir(\mathbf{\alpha})$$. This posterior distribution can be approximated by numerical methods such as Markov chain Monte Carlo.
 
 ### Main Takeaway
 
