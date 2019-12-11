@@ -55,4 +55,16 @@ Here, d stands for a particular day and N corresponds to the total number of twe
 ![](https://i.imgur.com/nn8gLgS.png =340x250)
 ![](https://i.imgur.com/FksNjQc.png =340x250)
 
-Both the number of tweets over time and the weighted aggregated sentiment show significant ups and downs. From the graphs alone, it is unsure whether these variables can relate to the ground truth. Some parts of the graphs might seem promising. For instance, the number of tweets for Biden appear to decrease when his popularity goes down. Similarly, the weighted aggregated sentiment for Harris seems to rise and fall around the same time as Harris' ground truth. Whether these potential trends are due to noise and coincidence or the twitter data is truly significant in elections polls, is to be determined in the modeling part below.
+Both the number of tweets over time and the weighted aggregated sentiment show significant ups and downs. From the graphs alone, it is unsure whether these variables can relate to the ground truth. Some parts of the graphs might seem promising. For instance, the number of tweets for Biden appear to decrease when his popularity goes down. Similarly, the weighted aggregated sentiment for Harris seems to rise and fall around the same time as Harris' ground truth. Whether these potential trends are due to noise and coincidence or the twitter data is truly significant in elections polls, is to be determined in the modeling part.
+
+Additionally, it is interesting to plot the change in ground truth popularity versus the change in aggreagtes twitter sentiment. As such, we might get more insight in the potential correlation between these variables. 
+
+![](https://i.imgur.com/zHOsFWa.png =340x250)
+![](https://i.imgur.com/KNZWn9f.png =340x250)
+![](https://i.imgur.com/PYTXAVx.png =340x250)
+![](https://i.imgur.com/i2rllue.png =340x250)
+![](https://i.imgur.com/ibMQVXR.png =340x250)
+
+
+
+
