@@ -9,5 +9,5 @@ We are a group of Master's students at the John A. Paulson School of Engineering
 
 <div>    
     <img src="/assets/img/ben.jpg" class="img-circle">
-    Benjamin Levy
+    Ben
 </div>
