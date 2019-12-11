@@ -24,7 +24,7 @@ Next, we can explore the distribution of the sentiment in all tweets for specifi
 
 ![](https://i.imgur.com/s7eo0l7.png)
 
-Consequently, the sentiment on Twitter can be plotted over time. As the end goal of this project is to eveluate the correlation between twitter data and popularity of a specific presidential candidate, we came up with two specific variables to consider over time: number of tweets and aggregated sentiment weighted by likes. 
+Consequently, the sentiment on Twitter can be plotted over time. As the end goal of this project is to evaluate the correlation between twitter data and popularity of a specific presidential candidate, we came up with two specific variables to consider over time: number of tweets and aggregated sentiment weighted by likes. 
 
 The first variable allows us to explore how the amount of tweets mentioning a particular candidate relates to his/her popularity. For different sentiment cut-offs, the number of tweets for each candiddate is plotted over time on the figures below (left). The absolute ground truth over time from the polling data is plotted as well. Note that the number of tweets per day is divided by the max number of tweets that has happened during the entire timeframe considered. This has been done for visualization purposes only.
 

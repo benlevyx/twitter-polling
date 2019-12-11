@@ -38,11 +38,11 @@ Bollen et al. (2011) | Lexicon-based
 
 The most popular features used in this class of studies were either raw counts of tweets over the entire time period of interest for each candidate/party, or some sort of relative "sentiment score" based on the numbers of positive and negative tweets and their sentiment magnitudes.
 
-Beyond the political sphere, When it comes to general sentiment analysis on tweets of any theme, the most common techniques used in literature are Naive Bayes, support vector machines and logistic regression models while more complex approaches include convolutional and recurrent neural networks. The following table summarizes some of thet techniques which have been used in the past:
+Beyond the political sphere, when it comes to general sentiment analysis on tweets of any theme, the most common techniques used in literature are Naive Bayes, support vector machines and logistic regression models while more complex approaches include convolutional and recurrent neural networks. The following table summarizes some of thet techniques which have been used in the past:
 
 **Table 2:** Comparison of sentiment analysis models on Twitter.
 
-| Study | Type of sentiment model | Accuracy (if applicable) |
+| Study | Type of sentiment model | Accuracy |
 | -------- | -------- | -------- |
 | [Socher et al., (2013b)](https://www-nlp.stanford.edu/pubs/SocherEtAl_EMNLP2013.pdf) | Recurrent Neural Networks | 82.4% |
 | Socher et al., (2013b) | Naive Bayes | 81.8 |

@@ -20,7 +20,7 @@ First, a short literature review is discussed. Predicting elections has always b
 
 Secondly, the best data source will be identified and consecutive collection will be executed. For the tweets, the Twitter API is used to scrape all posts mentioning the five candidates considered from early March until end of October 2019. Additionally, 'ground truth' polling data needs to be collected to assess the correlation with the twitter sentiment. Realizing that this does not exist, the best source for multiple pollster data appeared to be the well-known FiveThirtyEight.com. The actual implementation of collecting the tweets and ground truth polling data will be discussed in the section 'Data Collection'.
 
-Consequently, a sentiment score should be assigned to all selected tweets. A deep neural network has been trained on an online available, labeled dataset to predict a score between 0 and 1 based on the actual words used in the tweet. Here, 0 and 1 correspond to a very negative and very positive sentiment, respectively. The optimal weights are then used to predict the sentiment on the political tweets that are collected.
+Consequently, a sentiment score should be assigned to all selected tweets. A deep neural network has been trained on two online available, labeled datasets to predict a score between 0 and 1 based on the actual words used in the tweet. Here, 0 and 1 correspond to a very negative and very positive sentiment, respectively. The optimal weights are then used to predict the sentiment on the political tweets that are collected.
 
 After all data has been collected and generated, Exploratory Data Analysis (EDA) can be done. Visualizations of both tweet sentiment and ground truth show the general trends in the data.
 

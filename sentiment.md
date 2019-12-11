@@ -40,7 +40,7 @@ Firstly, we fitted a baseline model which consisted of an embedding layer which 
 
 #### Recurrent Neural Network
 
-Text data is sequential. In other words, the meaning of a sentence is updated with each word added to it. A human is reading each sentence by processing each word after the other while keeping an internal state of what preceded each word. Unlike feedforward neural networks, recurrent neural networks use the same logic by iterating over the elements of a text sequence while keeping a state in memory which contains information related to the previous elements of the sequence. For this reason, recurrent neural networks are a natural choice when it comes to sequential data and particurly text.
+Text data is sequential. In other words, the meaning of a sentence is updated with each word added to it. A human is reading each sentence by processing it word by word, while keeping an internal state of what preceded each word. Unlike feedforward neural networks, recurrent neural networks use the same logic by iterating over the elements of a text sequence while keeping a state in memory which contains information related to the previous elements of the sequence. For this reason, recurrent neural networks are a natural choice when it comes to sequential data and particularly text.
 
 ![Text](/assets/img/rnn.png)
 *Figure: A toy recurrent neural network (source: Deep Learning with Python by Francois Chollet).*
