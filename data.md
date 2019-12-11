@@ -47,6 +47,7 @@ The weight associated with the sample size, $$n$$, of a given poll was defined t
 Meanwhile, the weight assigned to FiveThirtyEight’s pollster ratings was set to $$e^{-\lambda x}$$ where $$x$$ is a mapping from ratings to numbers such that A+, A and B respectively correspond to 0, 1 and 4, etc., and $$\lambda$$ is a hyperparameter to optimize. This exponentially decaying function guarantees that higher ratings are given a larger weight. Linearly combining these two credibility-related factors, the final weight assigned to a given poll was $$\alpha \sqrt{n} + (1 - \alpha) e^{-\lambda x}$$ where $$\lambda$$ and $$\alpha$$ are hyperparameters to tune. 
 
 The table below provides a summary of the variables defined above:
+
 | Variable | Definition | 
 | :-------------: |:-------------:|
 | $$n$$ | sample size of poll| 
