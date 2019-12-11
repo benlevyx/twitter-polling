@@ -66,6 +66,7 @@ kramdown:
 
 # Setting sidebar image
 accent_image: /assets/img/twitter-sidebar.jpg
+accent_color: rgb(204, 102, 0)
 
 
 # Exclude from processing.
