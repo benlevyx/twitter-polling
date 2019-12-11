@@ -36,20 +36,26 @@ $$
 
 Here, d stands for a particular day and N corresponds to the total number of tweets mentioning a particular candidate posted that day. On the right figures below, this aggregated, weighted sentiment is plotted over time, again with the absolute ground truth overlaid.
 
-![](https://i.imgur.com/CtYwNfP.png =340x250)
-![](https://i.imgur.com/SdmEMdi.png =340x250)
-
-![](https://i.imgur.com/krxNgVN.png =340x250)
-![](https://i.imgur.com/smiDwz3.png =340x250)
-
-![](https://i.imgur.com/2yHZQSk.png =340x250)
-![](https://i.imgur.com/kVxdcbo.png =340x250)
-
-![](https://i.imgur.com/By82NJL.png =340x250)
-![](https://i.imgur.com/NhxoNSA.png =340x250)
-
-![](https://i.imgur.com/nn8gLgS.png =340x250)
-![](https://i.imgur.com/FksNjQc.png =340x250)
+<p float="left" align="middle">
+	<img src="https://i.imgur.com/CtYwNfP.png" width=340/>
+	<img src="https://i.imgur.com/SdmEMdi.png" width=340/>
+</p>
+<p float="left" align="middle">
+	<img src="https://i.imgur.com/krxNgVN.png" width=340/>
+	<img src="https://i.imgur.com/smiDwz3.png" width=340/>
+</p>
+<p float="left" align="middle">
+	<img src="https://i.imgur.com/2yHZQSk.png" width=340/>
+	<img src="https://i.imgur.com/kVxdcbo.png" width=340/>
+</p>
+<p float="left" align="middle">
+	<img src="https://i.imgur.com/By82NJL.png" width=340/>
+	<img src="https://i.imgur.com/NhxoNSA.png" width=340/>
+</p>
+<p float="left" align="middle">
+	<img src="https://i.imgur.com/nn8gLgS.png" width=340/>
+	<img src="https://i.imgur.com/FksNjQc.png" width=340/>
+</p>
 
 Both the number of tweets over time and the weighted aggregated sentiment show significant ups and downs. From the graphs alone, it is unsure whether these variables can relate to the ground truth. Some parts of the graphs might seem promising. For instance, the number of tweets for Biden appear to decrease when his popularity goes down. Similarly, the weighted aggregated sentiment for Harris seems to rise and fall around the same time as Harris' ground truth. Whether these potential trends are due to noise and coincidence or the twitter data is truly significant in elections polls, is to be determined in the modeling part.
 
