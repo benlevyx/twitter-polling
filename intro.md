@@ -24,4 +24,9 @@ Lastly, the results from the analysis, appropriate conclusions and potential imp
 
 ![Text](/assets/img/tweet_word_cloud.jpg)
 
-![](https://i.imgur.com/xqvURt0.jpg) ![](https://i.imgur.com/jJvjTAI.jpg)
+<p float="left" align="middle">
+  <img src="https://i.imgur.com/xqvURt0.jpg" width="300" />
+  <img src="https://i.imgur.com/jJvjTAI.jpg" width="300" /> 
+</p>
+
+*Left: A primary debate among democratic presidential hopefuls; L-R: Amy Klobuchar, Pete Buttigieg, Elizabeth Warren, Joe Biden, Bernie Sanders. Right: A sketch by Saturday Night Live depicting the same debate.*
