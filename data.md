@@ -48,7 +48,7 @@ Meanwhile, the weight assigned to FiveThirtyEight’s pollster ratings was set t
 
 The table below provides a summary of the variables defined above:
 | Variable | Definition | 
-| :-------------: |:-------------:| -----:|
+| :-------------: |:-------------:|
 | $$n$$ | sample size of poll| 
 | $$x$$   | numeric representation of pollster ratings (higher ratings correspond to lower numbers)|
 |$$\alpha$$ | influence of sample size on weight of polls (ranges from 0 to 1)|
