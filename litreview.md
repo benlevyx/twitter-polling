@@ -80,3 +80,19 @@ Similar to the simplicity of the sentiment models, the models for predicting ele
 ### Conclusions from literature search
 
 There appears to be a gap in the literature on the four fronts discussed above. Thus, in this project, we hope to use advanced data science techniques to build a more robust model that can better answer the question, "can Twitter be used to predict public opinion in politics?"
+
+### References
+
+Bermingham, A., & Smeaton, A. (2011, November). On using Twitter to monitor political sentiment and predict election results. In Proceedings of the Workshop on Sentiment Analysis where AI meets Psychology (SAAIP 2011) (pp. 2-10). https://www.aclweb.org/anthology/W11-3702.
+
+Bollen, J., Mao, H., & Pepe, A. (2011, July). Modeling public mood and emotion: Twitter sentiment and socio-economic phenomena. In Fifth International AAAI Conference on Weblogs and Social Media. https://www.aaai.org/ocs/index.php/ICWSM/ICWSM11/paper/view/2826.
+
+Burnap, P., Gibson, R., Sloan, L., Southern, R., & Williams, M. (2016). 140 characters to victory?: Using Twitter to predict the UK 2015 General Election. Electoral Studies, 41, 230-233. https://doi.org/10.1016/j.electstud.2015.11.017.
+
+Chung, J. E., & Mustafaraj, E. (2011, August). Can collective sentiment expressed on twitter predict political elections?. In Twenty-Fifth AAAI Conference on Artificial Intelligence. https://www.aaai.org/ocs/index.php/AAAI/AAAI11/paper/view/3549/4126.
+
+Gayo-Avello, D. (2012). " I Wanted to Predict Elections with Twitter and all I got was this Lousy Paper"--A Balanced Survey on Election Prediction using Twitter Data. arXiv preprint arXiv:1204.6441. https://arxiv.org/abs/1204.6441.
+
+Tumasjan, A., Sprenger, T. O., Sandner, P. G., & Welpe, I. M. (2010, May). Predicting elections with twitter: What 140 characters reveal about political sentiment. In Fourth international AAAI conference on weblogs and social media. https://www.aaai.org/ocs/index.php/ICWSM/ICWSM10/paper/view/1441/1852.
+
+Wang, H., Can, D., Kazemzadeh, A., Bar, F., & Narayanan, S. (2012, July). A system for real-time twitter sentiment analysis of 2012 us presidential election cycle. In Proceedings of the ACL 2012 system demonstrations (pp. 115-120). Association for Computational Linguistics. http://dl.acm.org/citation.cfm?id=2390470.2390490.
