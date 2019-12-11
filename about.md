@@ -7,21 +7,8 @@ We are a group of Master's students at the John A. Paulson School of Engineering
 
 ### Group 53 members
 
-![Ben](/assets/img/ben.jpg)
-
-[Dimitris Vamvourellis](https://www.linkedin.com/in/dimitrios-vamvourellis/)
-![Dimitris](/assets/img/dimitris.jpeg)
-
-
-![Matthieu](/assets/img/matthieu.jpeg)
-![Will](/assets/img/will.jpeg)
-
-
-
-
-
 <div class="im-container">    
-    <img src="/twitter-polling/assets/img/ben.jpg" class="img-circle">
+    <img src="/twitter-polling/assets/img/matthieu.jpeg" class="img-circle">
     Ben
 </div>
 <div>
