@@ -22,4 +22,4 @@ Next, the association between the twitter sentiment over time and the ground tru
 Lastly, the results from the analysis, appropriate conclusions and potential improvements will be discussed.
 
 
-![Text](/assets/img/tweet word cloud.jpg)
+![Text](/assets/img/tweet\word\cloud.jpg)
