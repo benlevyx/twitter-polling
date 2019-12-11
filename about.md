@@ -17,6 +17,7 @@ We are a group of Master's students at the John A. Paulson School of Engineering
 </div>
 <div>
     <img src="/twitter-polling/assets/img/dimitris.jpeg" class="img-circle">
+    [Dimitris Vamvourellis](https://www.linkedin.com/in/dimitrios-vamvourellis/)
 </div>
 <div>
     <img src="/twitter-polling/assets/img/will.jpeg" class="img-circle">
