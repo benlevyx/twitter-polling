@@ -25,9 +25,12 @@ def get_stopwords():
     stopwords = []
     with open(config.DATA / 'sentiment' / 'stopwords.txt') as f:
         lines = f.readlines()
+    with open(config.DATA / 'topic_modelling' / 'stopwords.txt') as f:
+        newlines = f.readlines()
+    lines += newlines
     for i in range(1, len(lines)):
         stopwords.append(lines[i].strip())
-    return stopwords
+    return list(set(stopwords))
 
 
 def lemmatizer(nlp, doc):
@@ -43,10 +46,16 @@ def remove_stopwords(doc):
     return doc
 
 
-def make_docs(docs, nlp, notebook=False):
+def make_docs(docs, nlp, notebook=False, extra_stop=None):
     if notebook:
         pbar = tqdm_notebook
     else:
         pbar = tqdm
-    return [nlp(doc) for doc in pbar(docs)]
-
+    return [nlp(doc) for doc in tqdm(docs)]
+    # res = []
+    # for doc in pbar(docs):
+    #     nlp_doc = nlp(doc)
+    #     if extra_stop is not None:
+    #         nlp_doc = [lemma for lemma in nlp_doc if lemma not in extra_stop]
+    #     res.append(nlp_doc)
+    # return res
