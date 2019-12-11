@@ -8,7 +8,7 @@ We are a group of Master's students at the John A. Paulson School of Engineering
 ### Group 53 members
 
 <div class="im-container">    
-    <img src="/twitter-polling/assets/img/matthieu.jpeg" class="img-circle">
+    <img src="/twitter-polling/assets/img/ben.jpg" class="img-circle">
     Ben
 </div>
 <div>
