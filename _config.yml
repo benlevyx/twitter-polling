@@ -36,6 +36,7 @@ theme: jekyll-theme-hydejack
 plugins:
   - jekyll-feed
   - jekyll-redirect-from
+  - tweet-tag
 
 # whitelist: - jekyll-redirect-from
 
