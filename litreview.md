@@ -77,7 +77,14 @@ Similar to the simplicity of the sentiment models, the models for predicting ele
 
 ### Conclusions from literature search
 
-There appears to be a gap in the literature on the four fronts discussed above. Thus, in this project, we hope to use advanced data science techniques to build a more robust model that can better answer the question, "can Twitter be used to predict public opinion in politics?"
+There appears to be a gap in the literature on the four fronts discussed above. These limitations included,
+
+1. Reliance on either existing datasets or a very small percentage of Twitter traffic through the streaming API (1%)
+2. Extremely naïve sentiment analysis with low accuracy (at least, in the papers attempting to predict political outcomes)
+3. Ambiguous and changing definition of "ground truth"
+4. Overly simplistic predictive modelling strategies
+
+Thus, in this project, we hope to use advanced data science techniques to build a more robust model that can better answer the question, "can Twitter be used to predict public opinion in politics?"
 
 ### References
 
