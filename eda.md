@@ -8,7 +8,7 @@ Having collected the tweets, estimated the ground truth popularity of each candi
 
 First, it is interesting to see how the sentiment analysis performs in general and on political tweets in particular. The following table gives a sample of some tweets that express a very strong opinion:
 
-<div style="width:200px;">
+<div style="padding:4px;">
 
 | Candidate | Tweet        | Sentiment    |
 | :-------------: |:-------------:| -----:|
