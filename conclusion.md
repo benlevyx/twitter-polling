@@ -27,9 +27,13 @@ A strong assumption of the Bayesian model is that each positive-sentiment tweet 
 
 #### Bias in the collection of data
 
-- twint sampling (black box not sure if it is representative sample of the whole Twitter)
-- twitter bots (what if multiple accounts write positive stuff multiple times)
-- how could we improve this?
+`twint`
+
+Although `twint` gave us several advantages over the traditional Twitter API in terms of no historical or overall volume limits, the package may have introduced its own issues into the integrity of data collection. We noticed that the `twint` scraper was prone to missing entire days or even weeks at a time, and we subsequently needed to re-run the scraper to fill these gaps. It is entirely possible that `twint` failed to collect significant amounts of tweets for certain days or candidates. Unfortunately, there was no way to check whether there was any trend in collection failures for different candidates, meaning that the tweet counts may have been lower than they should have been for particular candidates. Our hope was that by smoothing out the counts of positive tweets over several days, we would have decreased the probability that any particular candidate would have had artificially lower tweet counts than other candidates for the entirety of the moving average window.
+
+*Bots*
+
+Twitter is notorious for having large numbers of bots (fake accounts), since it is so cheap to create an account and run it anonymously through an automated script. Pew Research found that [the majority of political news stories shared on Twitter come from bots](https://www.pewresearch.org/fact-tank/2018/04/09/5-things-to-know-about-bots-on-twitter/). Since we were interested in what *actual people* think of politicians, this was a significant concern. The design of a bot detection algorithm was outside the scope of this project (indeed, such an algorithm could have comprised its own project entirely), but in future efforts to estimate political sentiment in the real world from tweets, filtering for bots should be a key step in data cleaning.
 
 ## Final Conclusion
 
