@@ -18,7 +18,7 @@ tqdm.pandas()
 
 
 def load_corpus():
-    corpus = pd.read_csv(config.DATA / 'processed' / 'lemmas.csv', index_col=0)
+    corpus = pd.read_csv(config.DATA / 'processed' / 'lemmas.csv', index_col=0, engine='python')
     return corpus
 
 
@@ -79,7 +79,9 @@ def remove_extra_stop(corpus, extra_stop):
     res = []
     for doc in tqdm(corpus):
         if type(doc) == float and np.isnan(doc):
-            res.append([])
+            continue
+        elif doc is None:
+            continue
         else:
             nlp_doc = [lemma for lemma in doc if lemma not in extra_stop]
             res.append(nlp_doc)

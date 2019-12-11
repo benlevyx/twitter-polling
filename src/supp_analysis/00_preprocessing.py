@@ -17,7 +17,7 @@ from tqdm import tqdm
 from twitpol import config, topic_modelling, language, utils
 
 
-tqdm.pandas()
+# tqdm.pandas()
 
 
 def load_corpus():
@@ -59,7 +59,7 @@ def main():
     print('Done.')
 
     # For scalability
-    corpus = corpus.sample(1000000)
+    # corpus = corpus.sample(1000000)
 
     print('Matching to candidates...')
     corpus = match_to_candidates(corpus, queries)
@@ -72,7 +72,7 @@ def main():
 
     # Saving
     print('Saving...')
-    corpus.to_csv(config.DATA / 'processed' / 'lemmas.csv')
+    corpus.to_csv(config.DATA / 'processed' / 'lemmas_all.csv')
     print('Done')
 
 
