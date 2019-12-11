@@ -56,6 +56,8 @@ menu:
     url:   /modelling/
   - title: Conclusions
     url:   /conclusion/
+  - title: About
+    url:   /about/
 
 # Enabling math via KaTeX
 kramdown:
