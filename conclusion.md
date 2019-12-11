@@ -45,7 +45,7 @@ However, just because this model was convenient to use doesn't mean it was the m
 
 Additionally, this model failed to account for the fact that the popularity of certain candidates are tightly related. For example, Elizabeth Warren and Bernie Sanders are the two most progressive candidates in the field, which means that are both trying to win over the most progressive wing of the Democratic party. This means that increasing support for Warren should theoretically come at the expense of Bernie Sanders’s support and vice versa. Meanwhile, Joe Biden is generally seen as a safe, moderate, well-known candidate, which means that he tends to be the default choice for voters who aren’t particularly passionate about any of the other candidates. This means that lack of positive sentiment about other candidates theoretically bodes well for Biden.
 
-Listed below are features we could add to our Bayesian model that could potentially address some of these deficiencies: 
+Listed below are features we could have added to our Bayesian model that could potentially address some of these deficiencies: 
 
 A correlation matrix ($$\mathbf{\Sigma}$$) that measures the strength and direction of the correlation of the popularity of the various candidates. This correlation matrix would be specified by a combination of the empirical correlation matrix formed by the ground truth polling data and domain knowledge about how the ideologies and personalities of the candidates relate to each other. 
 
