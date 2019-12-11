@@ -1,9 +1,7 @@
 ---
 layout: page
-title: Conclusions and Possible Improvements
+title: Discussion and Conclusions
 ---
-
-## Discussion
 
 ### Possible Issues with Twitter Data
 
@@ -57,7 +55,7 @@ A generative model that explains how the observed sentiment scores are generated
 
 At this point, the posterior distribution of $$\mathbf{\theta}$$ can be specified: $$p(\mathbf{\theta} \mid \mathbf{S},\mathbf{\Sigma}) \propto p(\mathbf{S} \mid \mathbf{\theta}, \mathbf{\Sigma}) \ p(\mathbf{\theta})$$, where $$\mathbf{\theta} \sim Dir(\mathbf{\alpha})$$. This posterior distribution can be approximated by numerical methods such as Markov chain Monte Carlo.
 
-## Main Takeaway
+### Main Takeaway
 
 The key assumption motivating this project is that the subset of Democratic primary voters who are active on Twitter make up a representative sample of the overall Democratic electorate. This assumption is critical because it means that political tweets can be used to gain insight into the views of the broader population of Democratic primary voters. However, the fact that there is no discernable relationship between the views of the subpopulation of Twitter users (as measured by tweet sentiment) and the views of the population as a whole (as measured by polling numbers) calls into question the validity of this assumption. Overall, in keeping with the conclusions of other similar studies, the analysis conducted in this project indicates that tracking the sentiment of tweets is not a reliable way to gauge public opinion when it comes to politics. 
 
