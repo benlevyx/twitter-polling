@@ -20,3 +20,6 @@ After all data has been collected and generated, Exploratory Data Analysis (EDA)
 Next, the association between the twitter sentiment over time and the ground truth can finally be assessed in a statistically rigorous way. Baseline regression, Kalman filter and Bayesian models will be discussed consequently. 
 
 Lastly, the results from the analysis, appropriate conclusions and potential improvements will be discussed.
+
+
+![Text](/assets/img/tweet word cloud.jpg)
