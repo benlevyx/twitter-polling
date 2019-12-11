@@ -63,6 +63,10 @@ kramdown:
     preview:           true
     preview_as_code:   true
 
+# Setting sidebar image
+accent_image: /assets/img/twitter-banner.jpg
+
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
