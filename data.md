@@ -24,6 +24,10 @@ title: Data Collection
 
 In order to gain an accurate measure of overall sentiment for each candidate over the time period of interest (March to November 2019), we needed a dataset that was fully representative of each candidate's Twitter presence. Initially, we looked at using the [official Twitter API](https://developer.twitter.com/). However, Twitter places strict limits on overall download numbers and particularly limits the downloading of tweets dating more than 7 days before the download time. Thus, we had to find another option.
 
+![](https://i.imgur.com/2LbhsZi.png)
+
+*Figure: Twitter's API limits for tweet searches. Notably, the Standard option (free tier) can only search for tweets that were posted in the last 7 days.*
+
 We decided to use the python package [`twint`](https://github.com/twintproject/twint). This package is an Open-Source Intelligence (OSINT) tool that is specifically designed for scraping tweets and user information from Twitter _without limits_. Under the hood, it uses asynchronous webscraping libraries commonly available in Python to query Twitter just like any other web browser. It then iterates through pages of results, returning all the information the user has requested.
 
 Based on initial trials of the tool and our own manual searching, we determined that the task of scraping all the desired tweets would take well over a week and might involve upwards of a million tweets (the final total was over 2 million). Thus, we opted to do the data collection task using Amazon Web Services: first, we set up a virtual machine using AWS EC2 and connected it to a MySQL relational database. Then the Twitter scraper was run on the EC2 instance, periodically writing its scraped tweets to the database.
