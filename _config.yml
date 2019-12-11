@@ -64,7 +64,7 @@ kramdown:
     preview_as_code:   true
 
 # Setting sidebar image
-accent_image: /assets/img/twitter-banner.jpg
+accent_image: /assets/img/twitter-sidebar.jpg
 
 
 # Exclude from processing.
