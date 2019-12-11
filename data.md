@@ -5,6 +5,10 @@ title: Data Collection
 
 ### Twitter 
 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Please vote for <a href="https://twitter.com/hashtag/BernieSanders?src=hash&amp;ref_src=twsrc%5Etfw">#BernieSanders</a> For me. For this person. One time Bernie had the Ambassador of Denmark I think come to talk to the people of Vermont. And I remember he said. One day people will realize what&#39;s good for everyone is good for them. That&#39;s all I want for Christmas. 🌲 <a href="https://t.co/4R8swdKd5l">https://t.co/4R8swdKd5l</a></p>&mdash; Melting Mermaid (@charlamanesbane) <a href="https://twitter.com/charlamanesbane/status/1204548493160796161?ref_src=twsrc%5Etfw">December 10, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+*An example tweet about Bernie Sanders*
+
 In order to gain an accurate measure of overall sentiment for each candidate over the time period of interest (March to November 2019), we needed a dataset that was fully representative of each candidate's Twitter presence. Initially, we looked at using the [official Twitter API](https://developer.twitter.com/). However, Twitter places strict limits on overall download numbers and particularly limits the downloading of tweets dating more than 7 days before the download time. Thus, we had to find another option.
 
 We decided to use the python package [`twint`](https://github.com/twintproject/twint). This package is an Open-Source Intelligence (OSINT) tool that is specifically designed for scraping tweets and user information from Twitter _without limits_. Under the hood, it uses asynchronous webscraping libraries commonly available in Python to query Twitter just like any other web browser. It then iterates through pages of results, returning all the information the user has requested.
