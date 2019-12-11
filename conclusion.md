@@ -37,7 +37,7 @@ Twitter is notorious for having large numbers of bots (fake accounts), since it 
 
 ### Model Improvements
 
-All the analysis performed in the project offered strong evidence that tweets cannot be used to gain insight into candidates' popularity. As such, there was no need to develop any other models, as we were confident that even the most sophisticated model wouldn't be able to extract any useful signal from the tweets. That being said, there were still several flaws with our Bayesian model that ideally would have been addressed. 
+The analysis performed in the project offers strong evidence that tweets cannot be used to gain insight into candidates' popularity. As such, there was no need to develop any other models, as we were confident that even the most sophisticated model wouldn't be able to extract any useful signal from the tweets. That being said, there were still several flaws with our Bayesian model that ideally would have been addressed. 
 
 In this model, our formulation of the data-generating process in which supporters of a given candidate independently decide whether to post a tweet in favor that candidate was overly simplistic. Part of the allure of this view of the data-generating process was that it made it natural to model the data using a multinomial distribution and thus allowed us to take advantage of the computational simplicity and model interpretability associated with Dirichlet-multinomial conjugacy. 
 
