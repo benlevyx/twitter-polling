@@ -4,8 +4,6 @@ title: Modeling
 tags: twitter
 ---
 
-HI IM WILL
-
 ### Baseline regression models 
 
 Following EDA, we wanted to determine in a statistically rigorous way whether the aggregated Twitter sentiment for each candidate is correlated with his/her popularity as measured by polls (what we refer to as ground truth above). To do this, we performed a basic regression analysis for each candidate to calculate the statistical significance of Twitter sentiment as a predictor of ground truth. First, we fitted an OLS model by regressing the ground truth weekly time series on the aggregated mean twitter sentiment for the week before each poll date. The p-value provided by Statmodels summary method was very high for all candidates. This indicated that there is no evidence against the null hypothesis that the coefficient of the sentiment predictor is zero. In other words, the aggregated sentiment was not statistically significant. We also repeated the same analysis by regressing the ground truth weekly percentage change on the weekly sentiment percentage change. The p-values were also very high for this experiment.
