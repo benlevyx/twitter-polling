@@ -46,11 +46,11 @@ When it comes to general sentiment analysis on tweets of any theme, the most com
 | --------+---------+-------- |
 | Study | Type of sentiment model | Accuracy (if applicable) |
 | -------- | -------- | -------- |
-| Socher et al., (2013b) | Recurrent Neural Networks | 82.4% |
+| [Socher et al., (2013b)](https://www-nlp.stanford.edu/pubs/SocherEtAl_EMNLP2013.pdf) | Recurrent Neural Networks | 82.4% |
 | Socher et al., (2013b) | Naive Bayes | 81.8 |
 | Socher et al., (2013b) | SVM | 79.4 |
-| Sahni et al. (2009) |  Unigrams and Bigrams + Logistic Regression| 81.7
-| Sahni et al. (2009) | Unigrams + Naive Bayes | 79.2
+| [Sahni et al. (2017)](https://arxiv.org/pdf/1701.03051.pdf) |  Unigrams and Bigrams + Logistic Regression| 81.7
+| Sahni et al. (2017) | Unigrams + Naive Bayes | 79.2
 
 
 The simplistic approach to sentiment scoring seems to be one of the most significant limitations in the studies we have read. In general, sentiment analysis is a non-trivial task, and this is especially the case on Twitter, *particularly* in the realm of politics, where sarcasm, double entendre, ambiguous shorthands, and other linguistic oddities abound. Thus, building a strong sentiment classifier was one of the foci of our study.
