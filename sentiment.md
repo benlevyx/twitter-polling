@@ -42,6 +42,8 @@ Firstly, we fitted a baseline model which consisted of an embedding layer which 
 
 Text data is sequential. In other words, the meaning of a sentence is updated with each word added to it. A human is reading each sentence by processing each word after the other while keeping an internal state of what preceded each word. Unlike feedforward neural networks, recurrent neural networks use the same logic by iterating over the elements of a text sequence while keeping a state in memory which contains information related to the previous elements of the sequence. For this reason, recurrent neural networks are a natural choice when it comes to sequential data and particurly text.
 
+![Text](/assets/img/rnn.png)
+
 We experimented with LSTM (Long-Short-Term Memory) networks in Keras which are the most popular types of recurrent neural networks. We also experimented with a bidirectional LSTM network but this did not achieve higher performance than the unidirectional LSTM network.
 
 Finally, we also experimented with using a pre-trained embedding layer instead of training it together with the rest of the layers added on top of it.
