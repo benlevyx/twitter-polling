@@ -101,3 +101,9 @@ Gayo-Avello, D. (2012). " I Wanted to Predict Elections with Twitter and all I g
 Tumasjan, A., Sprenger, T. O., Sandner, P. G., & Welpe, I. M. (2010, May). Predicting elections with twitter: What 140 characters reveal about political sentiment. In Fourth international AAAI conference on weblogs and social media. https://www.aaai.org/ocs/index.php/ICWSM/ICWSM10/paper/view/1441/1852.
 
 Wang, H., Can, D., Kazemzadeh, A., Bar, F., & Narayanan, S. (2012, July). A system for real-time twitter sentiment analysis of 2012 us presidential election cycle. In Proceedings of the ACL 2012 system demonstrations (pp. 115-120). Association for Computational Linguistics. http://dl.acm.org/citation.cfm?id=2390470.2390490.
+
+Sahni, T., Chandak, C., Reddy, N., Singh, M. (2017). Efficient Twitter Sentiment Classification using Subjective Distant Supervision.  In 9th International Conference on Communication Systems and Networks (COMSNETS). https://ieeexplore.ieee.org/abstract/document/7945451
+
+Socher, R., Perelygin, A., Wu, J., Chuang, J., Manning, C., Ng, A., Potts, C. (2013). Recursive Deep Models for Semantic Compositionality Over a Sentiment Treebank. In Proceedings of the 2013 Conference on Empirical Methods in Natural Language Processing. https://www.aclweb.org/anthology/D13-1170/
+    
+
