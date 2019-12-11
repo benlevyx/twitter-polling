@@ -24,11 +24,25 @@ Furthermore, Sentiment140 comes preprocessed, since emoticons have already been 
 
 ### Model
 
-Deep neural networks achieve state-of-the-art performance on natural language processing so we decided to experiment with various deep learning architectures for this task using Keras. 
+#### From tweets to sequences
 
-First, we fitted a baseline model which consisted of an embedding layer which was then fed to a densely connected layer. The embedding layer was also trained with the rest of the network. This achieved a validation accuracy of about 79%. 
+As it was also noted in the literature review section, deep neural networks achieve state-of-the-art performance on natural language processing tasks, especially in sentiment analysis. For this reason, we decided to experiment with various deep learning architectures for this task using Keras. 
 
-We then experimented with recurrent neural networks and particularly LSTM architecture. We also tried a bidirectional LSTM network but this did not achieve a higher performance than the unidirectional LSTM network.
+Like most of the classifiers, raw text cannot be used as the input to neural networks. Instead, the pre-processed tweets were tokenized and each word was mapped to a number in an index.  Then each tweet was represented by a fixed-size sequence of numbers (any tweets with less words than the maximum length, were padded with zeros) which was the input to the neural network.
+
+#### Word Embedding
+
+The first layer of each neural network that we tried was an embedding layer. With word embedding, we refer to the process of associating each word with a dense, low-dimensional vector. The goal of word embeddings is to create a mapping between semantic information and geometric interpretation. For example, synonyms could be mapped to vectors which are parallel or have comparable norm in specific embedding spaces. Word embeddings can be learned from data jointly with the main task (for example prediction). In this way, a word embedding which is suitable for the given data and task can be learned. Alternatively, one can use a pre-trained word embedding which fits the given task. There are several publicly available word embeddings which have been trained on different types of language, like Word2Vec or GloVe. 
+
+#### Baseline model
+
+Firstly, we fitted a baseline model which consisted of an embedding layer which was then fed to a Dense hidden layer of 32 neurons. The embedding layer which mapped words to 100-dimensional vectors was also trained with the rest of the network. This network achieved a validation accuracy of about 79%. 
+
+#### Recurrent Neural Network
+
+Text data is sequential. In other words, the meaning of a sentence is updated with each word added to it. A human is reading each sentence by processing each word after the other while keeping an internal state of what preceded each word. Unlike feedforward neural networks, recurrent neural networks use the same logic by iterating over the elements of a text sequence while keeping a state in memory which contains information related to the previous elements of the sequence. For this reason, recurrent neural networks are a natural choice when it comes to sequential data and particurly text.
+
+We experimented with LSTM (Long-Short-Term Memory) networks in Keras which are the most popular types of recurrent neural networks. We also experimented with a bidirectional LSTM network but this did not achieve higher performance than the unidirectional LSTM network.
 
 Finally, we also experimented with using a pre-trained embedding layer instead of training it together with the rest of the layers added on top of it.
 
