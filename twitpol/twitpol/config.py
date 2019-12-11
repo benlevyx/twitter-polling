@@ -14,6 +14,7 @@ PROCESSED = DATA / 'processed'
 MODELS = ROOT / 'models'
 SRC = ROOT / 'src'
 LOGS = ROOT / 'logs'
+FIGS = ROOT / 'figures'
 
 API_KEY_FILE = Path('TWITTER_KEYS')
 TWITTER_CREDENTIALS_FILE = Path('twitter_credentials.yaml')
