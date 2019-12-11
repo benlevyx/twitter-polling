@@ -59,12 +59,12 @@ Both the number of tweets over time and the weighted aggregated sentiment show s
 
 Additionally, it is interesting to plot the change in ground truth popularity versus the change in aggreagtes twitter sentiment. As such, we might get more insight in the potential correlation between these variables. 
 
-![](https://i.imgur.com/zHOsFWa.png =340x250)
-![](https://i.imgur.com/KNZWn9f.png =340x250)
 ![](https://i.imgur.com/PYTXAVx.png =340x250)
+![](https://i.imgur.com/zHOsFWa.png =340x250)
 ![](https://i.imgur.com/i2rllue.png =340x250)
+![](https://i.imgur.com/KNZWn9f.png =340x250)
 ![](https://i.imgur.com/ibMQVXR.png =340x250)
 
-
+From these graphs, it is clear that a strong correlation between the change in ground truth and change in sentiment is missing, but that some relationship can not be excluded. For instance in the plot for Harris, a negative change in ground truth seems to have a more negative change in weighted sentiment score. This data exploration forms a solid basis for further statistical modeling. 
 
 
