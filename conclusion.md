@@ -59,15 +59,6 @@ At this point, the posterior distribution of $$\mathbf{\theta}$$ can be specifie
 
 ## Main Takeaway
 
-The key assumption motivating this project is that the subset of Democratic primary voters who are active on Twitter constitutes a representative sample of the overall Democratic electorate. This assumption is critical because it means that political tweets can be used to gain insight into the views of the broader population of Democratic primary voters. However, the fact that there is no discernable relationship between the views of the subpopulation of Twitter users (as measured by Tweet sentiment) and the views of the population as a whole (as measured by polling numbers) calls into question the validity of this assumption. 
-
-means that If this were the case, it would be reasonable to perform the classic statistical inference task of using a 
-
-
-- state clear conclusion: it seems that twitter cannot be used as polling tool - too many biases 
-
-- what could we improve (do more things based on user-level data )
-- debias for bots/republican 
-- take into account the negative tweets
+The key assumption motivating this project is that the subset of Democratic primary voters who are active on Twitter make up a representative sample of the overall Democratic electorate. This assumption is critical because it means that political tweets can be used to gain insight into the views of the broader population of Democratic primary voters. However, the fact that there is no discernable relationship between the views of the subpopulation of Twitter users (as measured by tweet sentiment) and the views of the population as a whole (as measured by polling numbers) calls into question the validity of this assumption. Overall, in keeping with the conclusions of other similar studies, the analysis conducted in this project indicates that tracking the sentiment of tweets is not a reliable way to gauge public opinion when it comes to politics. 
 
 
