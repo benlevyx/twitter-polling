@@ -52,8 +52,8 @@ menu:
     url:   /sentiment/
   - title: EDA
     url:   /eda/
-  - title: Modelling
-    url:   /modelling/
+  - title: Modeling
+    url:   /modeling/
   - title: Conclusions
     url:   /conclusion/
   - title: About
