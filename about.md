@@ -12,7 +12,7 @@ We are a group of Master's students at the John A. Paulson School of Engineering
         <img src="/twitter-polling/assets/img/ben.jpg" class="img-circle">
         <br/>
         <span>
-            <a href="https://www.linkedin.com/in/benjaminjslevy/">
+            <a href="https://www.linkedin.com/in/benjaminjslevy/" target="_blank">
                 <img src="/twitter-polling/assets/img/linkedin.png" class="icon">
             </a> Benjamin Levy
         </span>
@@ -21,7 +21,7 @@ We are a group of Master's students at the John A. Paulson School of Engineering
         <img src="/twitter-polling/assets/img/matthieu.jpg" class="img-circle">
         <br/>
         <span>
-            <a href="https://www.linkedin.com/in/matthieu-meeus-217316141/">
+            <a href="https://www.linkedin.com/in/matthieu-meeus-217316141/" target="_blank">
                 <img src="/twitter-polling/assets/img/linkedin.png" class="icon">
             </a>
         </span> Matthieu Meeus
@@ -32,7 +32,7 @@ We are a group of Master's students at the John A. Paulson School of Engineering
         <img src="/twitter-polling/assets/img/dimitris.jpg" class="img-circle">
         <br/>   
         <span>
-            <a href="https://www.linkedin.com/in/dimitrios-vamvourellis/">
+            <a href="https://www.linkedin.com/in/dimitrios-vamvourellis/" target="_blank">
                 <img src="/twitter-polling/assets/img/linkedin.png" class="icon">
             </a> Dimitris Vamvourellis
         </span>
@@ -41,7 +41,7 @@ We are a group of Master's students at the John A. Paulson School of Engineering
         <img src="/twitter-polling/assets/img/will.jpg" class="img-circle">
         <br/>
         <span>
-            <a href="https://www.linkedin.com/in/will-fried-011529150/">
+            <a href="https://www.linkedin.com/in/will-fried-011529150/" target="_blank">
                 <img src="/twitter-polling/assets/img/linkedin.png" class="icon">
             </a>
         </span> William Fried
