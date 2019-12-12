@@ -18,32 +18,32 @@ We are a group of Master's students at the John A. Paulson School of Engineering
         </span>
     </div>
     <div class="column">
+        <img src="/twitter-polling/assets/img/matthieu.jpg" class="img-circle">
         <br/>
-        <a href="https://www.linkedin.com/in/matthieu-meeus-217316141/">
-            <img src="/twitter-polling/assets/img/matthieu.jpg" class="img-circle">
-        </a>
         <span>
-            <img src="/twitter-polling/assets/img/linkedin.png" class="icon"> Matthieu Meeus
-        </span>
+            <a href="https://www.linkedin.com/in/matthieu-meeus-217316141/">
+                <img src="/twitter-polling/assets/img/linkedin.png" class="icon">
+            </a>
+        </span> Matthieu Meeus
     </div>
 </div>
 <div class="row">
     <div class="column">
-        <br/>
-        <a href="https://www.linkedin.com/in/dimitrios-vamvourellis/">
-            <img src="/twitter-polling/assets/img/dimitris.jpg" class="img-circle">
-        </a>   
+        <img src="/twitter-polling/assets/img/dimitris.jpg" class="img-circle">
+        <br/>   
         <span>
-            <img src="/twitter-polling/assets/img/linkedin.png" class="icon"> Dimitris Vamvourellis
+            <a href="https://www.linkedin.com/in/dimitrios-vamvourellis/">
+                <img src="/twitter-polling/assets/img/linkedin.png" class="icon">
+            </a> Dimitris Vamvourellis
         </span>
     </div>
     <div class="column">
+        <img src="/twitter-polling/assets/img/will.jpg" class="img-circle">
         <br/>
-        <a href="https://www.linkedin.com/in/will-fried-011529150/">
-            <img src="/twitter-polling/assets/img/will.jpg" class="img-circle">
-        </a>
         <span>
-            <img src="/twitter-polling/assets/img/linkedin.png" class="icon"> William Fried
-        </span>
+            <a href="https://www.linkedin.com/in/will-fried-011529150/">
+                <img src="/twitter-polling/assets/img/linkedin.png" class="icon">
+            </a>
+        </span> William Fried
     </div>
 </div>
