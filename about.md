@@ -14,7 +14,7 @@ We are a group of Master's students at the John A. Paulson School of Engineering
     </div>
     <div class="column">
         <img src="/twitter-polling/assets/img/matthieu.jpeg" class="img-circle">
-        Matthieu
+        <p align="middle">Matthieu</p>
     </div>
 </div>
 <div class="row">
