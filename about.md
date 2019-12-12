@@ -10,22 +10,22 @@ We are a group of Master's students at the John A. Paulson School of Engineering
 <div class="row">
     <div class="column">
         <img src="/twitter-polling/assets/img/ben.jpg" class="img-circle">
-        <span><img src="/twitter-polling/assets/img/linkedin.png" class="icon">Benjamin Levy</span>
+        <br/><span><img src="/twitter-polling/assets/img/linkedin.png" class="icon">Benjamin Levy</span>
     </div>
     <div class="column">
         <img src="/twitter-polling/assets/img/matthieu.jpg" class="img-circle">
-        <span><img src="/twitter-polling/assets/img/linkedin.png" class="icon">Matthieu Meeus</span>
+        <br/><span><img src="/twitter-polling/assets/img/linkedin.png" class="icon">Matthieu Meeus</span>
     </div>
 </div>
 <div class="row">
     <div class="column">   
         <img src="/twitter-polling/assets/img/dimitris.jpg" class="img-circle">
-        <span>
+        <br/><span>
             <img src="/twitter-polling/assets/img/linkedin.png" class="icon">Dimitris Vamvourellis
         </span>
     </div>
     <div class="column">
         <img src="/twitter-polling/assets/img/will.jpg" class="img-circle">
-        <span><img src="/twitter-polling/assets/img/linkedin.png" class="icon">William Fried</span>
+        <br/><span><img src="/twitter-polling/assets/img/linkedin.png" class="icon">William Fried</span>
     </div>
 </div>
