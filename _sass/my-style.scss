@@ -4,6 +4,13 @@ table {
     padding: 1em;
 }
 .img-circle {
-    width: 340px;
+    width: 100%;
     border-radius: 50%;
+}
+.column {
+    flex: 25%;
+    padding: 5px;
+}
+.row {
+    dispay: flex;
 }
